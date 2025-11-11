@@ -35,9 +35,9 @@ if not missing_percentage.empty:
         palette='viridis'
     )
     plt.title('Ham Verideki En Çok Eksik Veriye Sahip İlk 30 Sütun')
-    plt.xlabel('Eksik Veri Yüzdesi (%)')
+    plt.xlabel('Eksik Veri Yüzdesi %')
     plt.ylabel('Sütun Adları')
-    save_fig(config.FIGURES_DIR / 'raw_missing_data_top30_bar.png')
+    save_fig(config.FIGURES_DIR / 'raw_missing_data_top.png')
 
     cols_to_plot = missing_percentage.head(30).index
     df_missing_heatmap = df[cols_to_plot].isnull().astype(int)

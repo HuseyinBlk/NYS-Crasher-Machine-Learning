@@ -19,26 +19,21 @@ def clean_data(df):
     critical_cols = [c for c in critical_cols if c in df.columns]
     df = df.dropna(subset=critical_cols)
 
-    # Kategorik sütunları fillna ile doldur
     cat_cols = df.select_dtypes(include="object").columns
     for c in cat_cols:
         df[c] = df[c].fillna("UNKNOWN")
 
-    # İkinci araç sütunlarını "NONE" ile doldur
     second_vehicle_cols = ["CONTRIBUTING_FACTOR_VEHICLE_2", "VEHICLE_TYPE_CODE_2"]
     for c in second_vehicle_cols:
         if c in df.columns:
             df[c] = df[c].fillna("NONE")
 
-    # Sayısal sütunları 0 ile doldur
     num_cols = [c for c in df.columns if df[c].dtype in [np.int64, np.float64]]
     for c in num_cols:
         df[c] = df[c].fillna(0)
 
-    # NYC koordinat filtresi
     df = df[(df["LATITUDE"].between(40.4, 41.0)) & (df["LONGITUDE"].between(-74.3, -73.6))]
 
-    # Önemli sütunları tut
     keep_cols = [
         "CRASH_DATE", "CRASH_TIME", "BOROUGH", "ZIP_CODE", "LATITUDE", "LONGITUDE",
         "NUMBER_OF_PERSONS_INJURED", "NUMBER_OF_PERSONS_KILLED",
@@ -50,7 +45,6 @@ def clean_data(df):
     ]
     df = df[[c for c in keep_cols if c in df.columns]]
 
-    # Tarih ve saat feature’ları
     df["CRASH_DATE"] = pd.to_datetime(df["CRASH_DATE"], errors="coerce")
     df = df.dropna(subset=["CRASH_DATE"])
 

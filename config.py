@@ -23,3 +23,6 @@ FIGURES_DIR.mkdir(exist_ok=True, parents=True)
 
 RAW_DATA_FILE = DATA_DIR / "Default_Data.csv"
 PROCESSED_DATA_FILE = DATA_DIR / "Processed_Data.csv"
+
+RANDOM_STATE = 42
+TEST_SIZE = 0.2
