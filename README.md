@@ -39,11 +39,6 @@ Bu projeyi yerel ortamınızda çalıştırmak için aşağıdaki Python kütüp
 * Matplotlib / Seaborn
 * Scikit-learn
 
-Bu kütüphaneleri genellikle tek bir komutla yükleyebilirsiniz:
-
-```bash
-pip install pandas numpy matplotlib seaborn scikit-learn jupyter
-
 Proje Ekibi
 | Semih ALTUN |
 | Efe İNGİN |
@@ -51,3 +46,10 @@ Proje Ekibi
 | Hüseyin BALIK |
 | Muhammed Emir AYDOĞAN |
 | Umut ÖZKAN |
+
+Bu kütüphaneleri genellikle tek bir komutla yükleyebilirsiniz:
+
+```bash
+pip install pandas numpy matplotlib seaborn scikit-learn jupyter
+
+
