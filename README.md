@@ -44,7 +44,7 @@ Proje Ekibi:
 * Efe İNGİN 
 * Enes ÇAKIR 
 * Hüseyin BALIK 
-* Muhammed Emir AYDOĞAN 
+* Muhammet Emir AYDOĞAN 
 * Umut ÖZKAN 
 
 Bu kütüphaneleri genellikle tek bir komutla yükleyebilirsiniz:
